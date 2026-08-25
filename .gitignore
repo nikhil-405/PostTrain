@@ -2,3 +2,5 @@
 .env
 .vscode
 trial/
+PostTrain.egg-info
+__pycache__/
