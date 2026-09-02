@@ -1,1 +1,1 @@
-from .sft import SFTProcessor
+from .sft import SFTProcessor, SFTCollator

@@ -6,7 +6,7 @@ A PyTorch implementation of modern LLM post-training algorithms
 ```bash
 # Clone the repo
 git clone https://github.com/nikhil-405/PostTrain.git
-cd AtomML
+cd PostTrain
 ```
 
 ```bash
