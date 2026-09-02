@@ -15,7 +15,8 @@ class Trainer:
         """
         batch: {input_ids, labels, attention_mask}
         """
-        x = {key: value.to(self.device) for key, value in batch.items() if key != "labels"}
+        batch = {key: value.to(self.device) for key, value in batch.items()}
+        x = {key: value for key, value in batch.items() if key != "labels"}
 
         # Forward pass
         self.optimizer.zero_grad()
