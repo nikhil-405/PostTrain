@@ -1,5 +1,5 @@
 import torch
-from objectives.grpo import GRPOLoss
+from objectives import GRPOLoss
 
 def test_compute_advantages_basic():
     loss_fn = GRPOLoss()

@@ -1,5 +1,5 @@
 import torch
-from objectives.grpo import GRPOLoss
+from objectives import GRPOLoss
 
 def test_grpo_loss_basic():
     loss_fn = GRPOLoss(beta=1.0, epsilon=0.2)
