@@ -19,3 +19,13 @@ class GRPOLoss(BaseLoss):
         kl = torch.exp(log_ratio_ref) - log_ratio_ref - 1
         kl_loss = torch.sum(kl*mask) / torch.sum(mask)
         return policy_loss + self.beta * kl_loss
+
+    def compute_advantages(self, rewards, eps = 1e-8): 
+        """
+        rewards: [B, G]
+
+        We want to normalize them across groups
+        """
+        mu = torch.mean(rewards, dim = 1, keepdim = True)
+        sigma = torch.std(rewards, dim = 1, unbiased = False, keepdim = True)
+        return (rewards - mu) / (sigma + eps)
