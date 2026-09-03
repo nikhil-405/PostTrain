@@ -7,6 +7,7 @@ class DPOLoss(BaseLoss):
     def __init__(self, beta = 1):
         self.beta = beta
 
+    # FIX: Abstracted into the DPOTrainer, can be removed
     def get_sequence_logprobs(self, logits, labels, ignore_index = -100):
         """
         logits: [B, T, V] <-- for every timestep t, we have V numbers, logits (not probs) 
